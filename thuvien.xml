@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<thuvien>
+    <book>
+        <title> Sách truyện cổ tích Việt Nam </title>
+        <author> Nhiều tác giả </author>
+        <year>2020</year>
+        <genre>Truyện cổ tích<genre>
+    </book>
+    <book>
+        <title> Sách truyện cổ tích nước ngoài </title>
+        <author> Nhiều tác giả</author>
+        <year>2021</year>
+        <genre>Truyện cổ tích </genre>
+    </book>
+
+    <book> 
+        <title> Truyện ngụ ngôn</title>
+        <author>Nhiều tác giả</author>
+        <year>2019</year>
+        <genre>Truyện ngụ ngôn</genre>
+    </book>
+</thuvien>

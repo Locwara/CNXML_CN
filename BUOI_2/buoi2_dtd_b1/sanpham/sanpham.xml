@@ -1,0 +1,14 @@
+<?xml verseion="1.0" encoding="UTF-8"?>
+<!DOCTYPE library SYSTEM "sanpham.dtd"> 
+<products>
+    <product id="SP001" category = "Điện tử" price = "50000000" currency = "VND"> 
+    Iphone 15 Pro Max
+    </product>
+    <product id ="SP002" category = "Điện tử" price = "20000000" currency = "VND"> 
+    Samsung Galaxy S23 Ultra
+    </product>
+    
+    <product id = "SP003" category = "Điện tử" price = "16000000" currency = "VND">
+    Xiaomi 13 Pro
+    </product>
+</products>

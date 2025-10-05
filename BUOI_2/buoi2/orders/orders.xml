@@ -1,13 +1,12 @@
 <?xml version = "1.0" encoding = "UTF-8"?>
-
-<orders xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:noNamespaceSchemaLocation="orders.xsd">
+<!DOCTYPE orders SYSTEM "orders.dtd">
+<orders>
     <order id = "O001">
         <product id = "P001">
             <name>ĐIện thoại iPhone 14</name>
             <quantity>2</quantity>
         </product>
-        <product id = "P001">
+        <product id = "P002">
             <name>Laptop Dell</name>
             <quantity>1</quantity>
         </product>

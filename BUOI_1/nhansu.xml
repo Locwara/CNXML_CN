@@ -1,7 +1,7 @@
 <?xml version = "1.0" encoding = "UTF-8">
 <company xmlns:hr="http://company.com/hr" xmlns:dep="http://company.com/department">
-    <dep:department> 
-        <hr:employee>
+    <dep:department name ="Kế toán"> 
+        <hr:employee id ="E001">
             <hr:name> Nguyễn Văn A </hr:name>
             <hr:position>Kế toán trưởng</hr:positon>
         </dr:employee>
@@ -9,7 +9,7 @@
             <hr:name>Nguyễn Văn B</hr:name>
             <hr:positon>Kế toán</hr:positon>
         </hr:employee>
-    </dep:department>
+    </dep:department name ="Kinh doanh">
     <dep:deparment> 
         <hr:employee> 
             <hr:name>Trần Văn B</hr:name>

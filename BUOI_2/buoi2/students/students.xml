@@ -1,0 +1,15 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE students SYSTEM "students.dtd">
+
+<students>
+    <student id = "SV001">
+        <name>Nguyen Van A </name>
+        <dob>2000-01-01</dob>
+        <major>Công ngệ thông tin</major>
+    </student>
+    <student id = "SV002">
+        <name>Tran Thi B </name>
+        <dob>2000-08-21</dob>
+        <major>Quản trị kinh doanh</major>
+    </student>
+</students>

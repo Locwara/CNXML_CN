@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QUANAN xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xsi:noNamespaceSchemaLocation="quanan.xsd">
+    
+    <!-- Dữ liệu mẫu cho 5 dòng mỗi thực thể -->
+    
+    <!-- Bảng BAN -->
+    <BAN>
+        <TENBAN>Tang1</TENBAN>
+        <SOBAN>1</SOBAN>
+    </BAN>
+    <BAN>
+        <TENBAN>Tang1</TENBAN>
+        <SOBAN>2</SOBAN>
+    </BAN>
+    <BAN>
+        <TENBAN>Tang2</TENBAN>
+        <SOBAN>1</SOBAN>
+    </BAN>
+    <BAN>
+        <TENBAN>Tang2</TENBAN>
+        <SOBAN>2</SOBAN>
+    </BAN>
+    <BAN>
+        <TENBAN>SanThuong</TENBAN>
+        <SOBAN>1</SOBAN>
+    </BAN>
+    
+    <!-- Bảng MON -->
+    <MON>
+        <MAMON>M001</MAMON>
+        <TENMON>Phở bò</TENMON>
+        <GIA>50000</GIA>
+        <HINHANH>phobo.jpg</HINHANH>
+    </MON>
+    <MON>
+        <MAMON>M002</MAMON>
+        <TENMON>Cơm tấm</TENMON>
+        <GIA>45000</GIA>
+        <HINHANH>comtam.jpg</HINHANH>
+    </MON>
+    <MON>
+        <MAMON>M003</MAMON>
+        <TENMON>Bún chả</TENMON>
+        <GIA>40000</GIA>
+        <HINHANH>buncha.jpg</HINHANH>
+    </MON>
+    <MON>
+        <MAMON>M004</MAMON>
+        <TENMON>Bánh mì thịt</TENMON>
+        <GIA>25000</GIA>
+        <HINHANH>banhmi.jpg</HINHANH>
+    </MON>
+    <MON>
+        <MAMON>M005</MAMON>
+        <TENMON>Cà phê sữa</TENMON>
+        <GIA>20000</GIA>
+        <HINHANH>caphe.jpg</HINHANH>
+    </MON>
+    
+    <!-- Bảng HOADON -->
+    <HOADON>
+        <SOHD>1001</SOHD>
+        <NGAYLAP>2024-09-01</NGAYLAP>
+        <TONGTIEN>145000</TONGTIEN>
+    </HOADON>
+    <HOADON>
+        <SOHD>1002</SOHD>
+        <NGAYLAP>2024-09-02</NGAYLAP>
+        <TONGTIEN>90000</TONGTIEN>
+    </HOADON>
+    <HOADON>
+        <SOHD>1003</SOHD>
+        <NGAYLAP>2024-09-03</NGAYLAP>
+        <TONGTIEN>120000</TONGTIEN>
+    </HOADON>
+    <HOADON>
+        <SOHD>1004</SOHD>
+        <NGAYLAP>2024-09-04</NGAYLAP>
+        <TONGTIEN>75000</TONGTIEN>
+    </HOADON>
+    <HOADON>
+        <SOHD>1005</SOHD>
+        <NGAYLAP>2024-09-05</NGAYLAP>
+        <TONGTIEN>200000</TONGTIEN>
+    </HOADON>
+    
+    <!-- Bảng NHANVIEN -->
+    <NHANVIEN>
+        <MANV>NV001</MANV>
+        <TENNV>Nguyễn Văn An</TENNV>
+        <SDT>0912345678</SDT>
+        <DIACHI>123 Lê Lợi, Q1, TPHCM</DIACHI>
+        <GIOITINH>Nam</GIOITINH>
+        <USERNAME>nguyenvanan</USERNAME>
+        <PASSWORD>matkhau123456</PASSWORD>
+    </NHANVIEN>
+    <NHANVIEN>
+        <MANV>NV002</MANV>
+        <TENNV>Trần Thị Bình</TENNV>
+        <SDT>0987654321</SDT>
+        <DIACHI>456 Nguyễn Huệ, Q1, TPHCM</DIACHI>
+        <GIOITINH>Nữ</GIOITINH>
+        <USERNAME>tranthibinh</USERNAME>
+        <PASSWORD>password9876</PASSWORD>
+    </NHANVIEN>
+    <NHANVIEN>
+        <MANV>NV003</MANV>
+        <TENNV>Lê Minh Cường</TENNV>
+        <SDT>0901234567</SDT>
+        <DIACHI>789 Trần Hưng Đạo, Q5, TPHCM</DIACHI>
+        <GIOITINH>Nam</GIOITINH>
+        <USERNAME>leminhcuong</USERNAME>
+        <PASSWORD>cuong@12345</PASSWORD>
+    </NHANVIEN>
+    <NHANVIEN>
+        <MANV>NV004</MANV>
+        <TENNV>Phạm Thị Dung</TENNV>
+        <SDT>0923456789</SDT>
+        <DIACHI>321 Lý Thường Kiệt, Q10, TPHCM</DIACHI>
+        <GIOITINH>Nữ</GIOITINH>
+        <USERNAME>phamthidung</USERNAME>
+        <PASSWORD>dungpham2024</PASSWORD>
+    </NHANVIEN>
+    <NHANVIEN>
+        <MANV>NV005</MANV>
+        <TENNV>Hoàng Văn Em</TENNV>
+        <SDT>0934567890</SDT>
+        <DIACHI>654 Hai Bà Trưng, Q3, TPHCM</DIACHI>
+        <GIOITINH>Nam</GIOITINH>
+        <USERNAME>hoangvanem</USERNAME>
+        <PASSWORD>emhoang@456</PASSWORD>
+    </NHANVIEN>
+    
+    <!-- Quan hệ THANHTOAN -->
+    <THANHTOAN>
+        <TENBAN_REF>Tang1</TENBAN_REF>
+        <SOBAN_REF>1</SOBAN_REF>
+        <SOHD_REF>1001</SOHD_REF>
+    </THANHTOAN>
+    <THANHTOAN>
+        <TENBAN_REF>Tang1</TENBAN_REF>
+        <SOBAN_REF>2</SOBAN_REF>
+        <SOHD_REF>1002</SOHD_REF>
+    </THANHTOAN>
+    <THANHTOAN>
+        <TENBAN_REF>Tang2</TENBAN_REF>
+        <SOBAN_REF>1</SOBAN_REF>
+        <SOHD_REF>1003</SOHD_REF>
+    </THANHTOAN>
+    <THANHTOAN>
+        <TENBAN_REF>Tang2</TENBAN_REF>
+        <SOBAN_REF>2</SOBAN_REF>
+        <SOHD_REF>1004</SOHD_REF>
+    </THANHTOAN>
+    <THANHTOAN>
+        <TENBAN_REF>SanThuong</TENBAN_REF>
+        <SOBAN_REF>1</SOBAN_REF>
+        <SOHD_REF>1005</SOHD_REF>
+    </THANHTOAN>
+    
+    <!-- Quan hệ CTHD (Chi tiết hóa đơn) -->
+    <CTHD>
+        <SOHD_REF>1001</SOHD_REF>
+        <MAMON_REF>M001</MAMON_REF>
+        <SOLUONG>2</SOLUONG>
+    </CTHD>
+    <CTHD>
+        <SOHD_REF>1001</SOHD_REF>
+        <MAMON_REF>M002</MAMON_REF>
+        <SOLUONG>1</SOLUONG>
+    </CTHD>
+    <CTHD>
+        <SOHD_REF>1002</SOHD_REF>
+        <MAMON_REF>M003</MAMON_REF>
+        <SOLUONG>2</SOLUONG>
+    </CTHD>
+    <CTHD>
+        <SOHD_REF>1003</SOHD_REF>
+        <MAMON_REF>M004</MAMON_REF>
+        <SOLUONG>3</SOLUONG>
+    </CTHD>
+    <CTHD>
+        <SOHD_REF>1004</SOHD_REF>
+        <MAMON_REF>M005</MAMON_REF>
+        <SOLUONG>2</SOLUONG>
+    </CTHD>
+    
+    <!-- Quan hệ LAP_HD (Nhân viên lập hóa đơn) -->
+    <LAP_HD>
+        <MANV_REF>NV001</MANV_REF>
+        <SOHD_REF>1001</SOHD_REF>
+    </LAP_HD>
+    <LAP_HD>
+        <MANV_REF>NV002</MANV_REF>
+        <SOHD_REF>1002</SOHD_REF>
+    </LAP_HD>
+    <LAP_HD>
+        <MANV_REF>NV003</MANV_REF>
+        <SOHD_REF>1003</SOHD_REF>
+    </LAP_HD>
+    <LAP_HD>
+        <MANV_REF>NV004</MANV_REF>
+        <SOHD_REF>1004</SOHD_REF>
+    </LAP_HD>
+    <LAP_HD>
+        <MANV_REF>NV005</MANV_REF>
+        <SOHD_REF>1005</SOHD_REF>
+    </LAP_HD>
+    
+</QUANAN>

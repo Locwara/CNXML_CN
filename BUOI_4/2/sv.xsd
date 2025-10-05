@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:simpleType name="MaType">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="10"/>
+            <xs:pattern value="[A-Z0-9]+"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TenKhoa">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="20"/>
+            <xs:pattern value="[A-Z0-9]+"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="TenLop">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="20"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="sdtType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{10}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    
+    <xs:element name="school">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="sinhvien" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="mssv" type="xs:string"/>
+                            <xs:element name="hoten" type = "xs:string"/>
+                            <xs:element name="email" type="xs:string"/>
+                            <xs:element name="diachi" type = "xs:string"/>
+                            <xs:element name="sdt" type="sdtType"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="lop" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="ma" type = "MaType"/>
+                            <xs:element name="ten" type = "TenLop"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="khoa" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="ma" type = "MaType"/>
+                            <xs:element name="ten" type = "TenKhoa"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="thuoc" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="mssv_Ref" type="xs:string"/>
+                            <xs:element name="ma_lop_Ref" type="MaType"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="quanly" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="ma_lop_Ref" type="MaType"/>
+                            <xs:element name = "ma_khoa_Ref" type="MaType"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+        <xs:key name="LopKey">
+            <xs:selector xpath="lop"/>
+            <xs:field xpath="ma"/>
+        </xs:key>
+        <xs:key name="Khoakey">
+            <xs:selector xpath="khoa"/>
+            <xs:field xpath="ma"/>
+        </xs:key>
+        <xs:key name="SinhVienKey">
+            <xs:selector xpath="sinhvien"/>
+            <xs:field xpath="mssv"/>
+        </xs:key>
+        <xs:keyref name="ThuocLopRef" refer="LopKey">
+            <xs:selector xpath="thuoc"/>
+            <xs:field xpath="ma_lop_Ref"/>
+        </xs:keyref>
+        <xs:keyref name="ThuócinhVienRef" refer="SinhVienKey">
+            <xs:selector xpath="thuoc"/>
+            <xs:field xpath="mssv_Ref"/>
+        </xs:keyref>
+        <xs:keyref name="QuanLyLopRef" refer = "LopKey">
+            <xs:selector xpath="quanly"/>
+            <xs:field xpath="ma_lop_Ref"/>
+        </xs:keyref>
+        <xs:keyref name="QuanLyKhoaRef" refer="Khoakey">
+            <xs:selector xpath="quanly"/>
+            <xs:field xpath="ma_khoa_Ref"/>
+        </xs:keyref>
+    </xs:element>
+</xs:schema>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<school xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="sv.xsd">
+    <sinhvien>
+        <mssv>SV01</mssv>
+        <hoten>Nguyễn Văn A</hoten>
+        <email>nguyenvana@gmail.com</email>
+        <diachi>Cần Thơ</diachi>
+        <sdt>0476859943</sdt>
+    </sinhvien>
+    <sinhvien>
+        <mssv>SV02</mssv>
+        <hoten>Nguyễn Văn B</hoten>
+        <email>nguyenvanb@gmail.com</email>
+        <diachi>Cần Thơ</diachi>
+        <sdt>0476435943</sdt>
+    </sinhvien>
+    <sinhvien>
+        <mssv>SV03</mssv>
+        <hoten>Nguyễn Văn c</hoten>
+        <email>nguyenvanc@gmail.com</email>
+        <diachi>Cần Thơ</diachi>
+        <sdt>0476435943</sdt>
+    </sinhvien>
+    <lop>
+        <ma>L001</ma>
+        <ten>Công nghệ thông tin</ten>
+    </lop>
+    <lop>
+        <ma>L002</ma>
+        <ten>Khoa học dữ liệu</ten>
+    </lop>
+    <lop>
+        <ma>L003</ma>
+        <ten>Ngôn ngữ anh</ten>
+    </lop>
+    <khoa>
+        <ma>K001</ma>
+        <ten>CNTT</ten>
+    </khoa>
+    <khoa>
+        <ma>K002</ma>
+        <ten>KT</ten>
+    </khoa>
+
+    <thuoc>
+        <mssv_Ref>SV01</mssv_Ref>
+        <ma_lop_Ref>L001</ma_lop_Ref>
+    </thuoc>
+    <thuoc>
+        <mssv_Ref>SV02</mssv_Ref>
+        <ma_lop_Ref>L002</ma_lop_Ref>
+    </thuoc>
+    <thuoc>
+        <mssv_Ref>SV03</mssv_Ref>
+        <ma_lop_Ref>L003</ma_lop_Ref>
+    </thuoc>
+
+    <quanly>
+        <ma_lop_Ref>L001</ma_lop_Ref>
+        <ma_khoa_Ref>K001</ma_khoa_Ref>
+    </quanly>
+    <quanly>
+        <ma_lop_Ref>L002</ma_lop_Ref>
+        <ma_khoa_Ref>K002</ma_khoa_Ref>
+    </quanly>
+    <quanly>
+        <ma_lop_Ref>L003</ma_lop_Ref>
+        <ma_khoa_Ref>K002</ma_khoa_Ref>
+    </quanly>
+</school>

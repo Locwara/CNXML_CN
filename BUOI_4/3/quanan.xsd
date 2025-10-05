@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    
+    <!-- Định nghĩa kiểu dữ liệu dùng chung cho Username -->
+    <xs:simpleType name="UsernameType">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="5"/>
+            <xs:maxLength value="50"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- Định nghĩa kiểu dữ liệu dùng chung cho Password -->
+    <xs:simpleType name="PasswordType">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="10"/>
+            <xs:maxLength value="50"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- Phần tử gốc QUANAN -->
+    <xs:element name="QUANAN">
+        <xs:complexType>
+            <xs:sequence>
+                <!-- Bảng BAN -->
+                <xs:element name="BAN" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="TENBAN" type="xs:string"/>
+                            <xs:element name="SOBAN" type="xs:integer"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                
+                <!-- Bảng MON -->
+                <xs:element name="MON" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="MAMON" type="xs:string"/>
+                            <xs:element name="TENMON" type="xs:string"/>
+                            <xs:element name="GIA" type="xs:float"/>
+                            <xs:element name="HINHANH" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                
+                <!-- Bảng HOADON -->
+                <xs:element name="HOADON" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="SOHD" type="xs:integer"/>
+                            <xs:element name="NGAYLAP" type="xs:date"/>
+                            <xs:element name="TONGTIEN" type="xs:float"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                
+                <!-- Bảng NHANVIEN -->
+                <xs:element name="NHANVIEN" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="MANV" type="xs:string"/>
+                            <xs:element name="TENNV" type="xs:string"/>
+                            <xs:element name="SDT" type="xs:string"/>
+                            <xs:element name="DIACHI" type="xs:string"/>
+                            <xs:element name="GIOITINH" type="xs:string"/>
+                            <xs:element name="USERNAME" type="UsernameType"/>
+                            <xs:element name="PASSWORD" type="PasswordType"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                
+                <!-- Quan hệ THANHTOAN (BAN - HOADON) -->
+                <xs:element name="THANHTOAN" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="TENBAN_REF" type="xs:string"/>
+                            <xs:element name="SOBAN_REF" type="xs:integer"/>
+                            <xs:element name="SOHD_REF" type="xs:integer"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                
+                <!-- Quan hệ CTHD (HOADON - MON) với thuộc tính SOLUONG -->
+                <xs:element name="CTHD" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="SOHD_REF" type="xs:integer"/>
+                            <xs:element name="MAMON_REF" type="xs:string"/>
+                            <xs:element name="SOLUONG" type="xs:integer"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                
+                <!-- Quan hệ LAP_HD (NHANVIEN - HOADON) -->
+                <xs:element name="LAP_HD" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="MANV_REF" type="xs:string"/>
+                            <xs:element name="SOHD_REF" type="xs:integer"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+        
+        <!-- Khóa chính cho BAN (composite key) -->
+        <xs:key name="BanKey">
+            <xs:selector xpath="BAN"/>
+            <xs:field xpath="TENBAN"/>
+            <xs:field xpath="SOBAN"/>
+        </xs:key>
+        
+        <!-- Khóa chính cho MON -->
+        <xs:key name="MonKey">
+            <xs:selector xpath="MON"/>
+            <xs:field xpath="MAMON"/>
+        </xs:key>
+        
+        <!-- Khóa chính cho HOADON -->
+        <xs:key name="HoaDonKey">
+            <xs:selector xpath="HOADON"/>
+            <xs:field xpath="SOHD"/>
+        </xs:key>
+        
+        <!-- Khóa chính cho NHANVIEN -->
+        <xs:key name="NhanVienKey">
+            <xs:selector xpath="NHANVIEN"/>
+            <xs:field xpath="MANV"/>
+        </xs:key>
+        
+        <!-- Khóa ngoại: THANHTOAN tham chiếu đến BAN -->
+        <xs:keyref name="ThanhToanBanRef" refer="BanKey">
+            <xs:selector xpath="THANHTOAN"/>
+            <xs:field xpath="TENBAN_REF"/>
+            <xs:field xpath="SOBAN_REF"/>
+        </xs:keyref>
+        
+        <!-- Khóa ngoại: THANHTOAN tham chiếu đến HOADON -->
+        <xs:keyref name="ThanhToanHoaDonRef" refer="HoaDonKey">
+            <xs:selector xpath="THANHTOAN"/>
+            <xs:field xpath="SOHD_REF"/>
+        </xs:keyref>
+        
+        <!-- Khóa ngoại: CTHD tham chiếu đến HOADON -->
+        <xs:keyref name="CTHDHoaDonRef" refer="HoaDonKey">
+            <xs:selector xpath="CTHD"/>
+            <xs:field xpath="SOHD_REF"/>
+        </xs:keyref>
+        
+        <!-- Khóa ngoại: CTHD tham chiếu đến MON -->
+        <xs:keyref name="CTHDMonRef" refer="MonKey">
+            <xs:selector xpath="CTHD"/>
+            <xs:field xpath="MAMON_REF"/>
+        </xs:keyref>
+        
+        <!-- Khóa ngoại: LAP_HD tham chiếu đến NHANVIEN -->
+        <xs:keyref name="LapHDNhanVienRef" refer="NhanVienKey">
+            <xs:selector xpath="LAP_HD"/>
+            <xs:field xpath="MANV_REF"/>
+        </xs:keyref>
+        
+        <!-- Khóa ngoại: LAP_HD tham chiếu đến HOADON -->
+        <xs:keyref name="LapHDHoaDonRef" refer="HoaDonKey">
+            <xs:selector xpath="LAP_HD"/>
+            <xs:field xpath="SOHD_REF"/>
+        </xs:keyref>
+    </xs:element>
+    
+</xs:schema>

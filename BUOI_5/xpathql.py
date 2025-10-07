@@ -43,7 +43,7 @@ print("\n8. Lấy tên món có mã M02")
 ten_m02 = root.xpath("//MON[MAMON='M02']/TENMON/text()")
 for t in ten_m02:
     print(f"Tên món M02: {t}")
-
+# fixx
 print("\n9. Lấy ngày lập của hóa đơn HD03")
 ngay_hd03 = root.xpath("//HOADON[SOHD='HD03']/NGAYLAP/text()")
 for n in ngay_hd03:
